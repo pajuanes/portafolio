@@ -1,11 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { InfoPaginaService } from '../../services/info-pagina.service';
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './about.html',
   styleUrl: './about.css'
 })
-export class About {
+export class About implements OnInit {
+
+  constructor( public _infoService: InfoPaginaService ) { }
+
+  ngOnInit() {
+
+  }
 
 }
