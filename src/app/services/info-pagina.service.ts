@@ -24,6 +24,16 @@ export class InfoPaginaService {
       });
   }
 
+  private cargarInfo() {
+    // Leer el archivo JSON
+    this.http.get('assets/data/data-pagina.json')
+      .subscribe( (resp: InfoPagina)  => {
+        this.cargada = true;
+        this.info = resp;
+        console.log(resp);
+      });
+  }
+
   getInfo() {
     // Logic to fetch or return information
     return {
