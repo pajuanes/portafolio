@@ -11,15 +11,6 @@ export const app_routes: Routes = [
     { path: '**', pathMatch: 'full', redirectTo: '' }
 ];
 
-// @NgModule({
-//     imports: [
-//         RouterModule.forRoot(app_routes, { useHash: true, scrollPositionRestoration: 'enabled' })
-//     ],
-//     exports: [
-//         RouterModule
-//     ],
-// })
-    
 export class AppRoutes {
 
 

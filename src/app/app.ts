@@ -4,8 +4,10 @@ import { Header } from "./shared/header/header";
 import { Footer } from './shared/footer/footer';
 
 //Rutas
-import { app_routes } from './app.routes';
-import { RouterModule } from '@angular/router';
+// import { app_routes } from './app.routes';
+// import { RouterModule } from '@angular/router';
+
+import { InfoPaginaService } from './services/info-pagina.service';
 
 //Componentes
 import { Portafolio } from './pages/portafolio/portafolio';
@@ -21,5 +23,9 @@ import { Item } from './pages/item/item';
   styleUrl: './app.css'
 })
 export class App {
-  protected title = 'portafolio';
+  
+  constructor( public infoPaginaService: InfoPaginaService) {
+    console.log('App component initialized');
+  }
+
 }
