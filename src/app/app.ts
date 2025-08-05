@@ -3,11 +3,9 @@ import { RouterOutlet } from '@angular/router';
 import { Header } from "./shared/header/header";
 import { Footer } from './shared/footer/footer';
 
-//Rutas
-// import { app_routes } from './app.routes';
-// import { RouterModule } from '@angular/router';
-
+//Servicios
 import { InfoPaginaService } from './services/info-pagina.service';
+import { ProductosService } from './services/productos.service';
 
 //Componentes
 import { Portafolio } from './pages/portafolio/portafolio';
@@ -24,7 +22,8 @@ import { Item } from './pages/item/item';
 })
 export class App {
   
-  constructor( public infoPaginaService: InfoPaginaService) {
+  constructor( public infoPaginaService: InfoPaginaService,
+               public productosService: ProductosService) {
     console.log('App component initialized');
   }
 

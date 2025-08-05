@@ -34,7 +34,7 @@ export class InfoPaginaService {
     this.http.get<any[]>('https://fir-portfolio-66f29-default-rtdb.europe-west1.firebasedatabase.app/equipo.json')
       .subscribe( (resp: any[]) => {
         this.equipo = resp;
-        console.log(resp);
+        // console.log(resp);
       });
   }
   

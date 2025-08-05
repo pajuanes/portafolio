@@ -1,5 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* SVG Animation */
+svg path,
+svg rect{
+  fill: black;
+}
+
+/* Animate.css v4.1.1 | MIT License */
 :root {
   --animate-duration: 1s;
   --animate-delay: 1s;

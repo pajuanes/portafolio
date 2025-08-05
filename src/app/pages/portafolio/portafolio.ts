@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ProductosService } from '../../services/productos.service';
 
 @Component({
   selector: 'app-portafolio',
@@ -8,6 +9,12 @@ import { RouterModule } from '@angular/router';
   templateUrl: './portafolio.html',
   styleUrl: './portafolio.css'
 })
-export class Portafolio {
+export class Portafolio implements OnInit{
+
+  constructor( public productosService: ProductosService) {}
+
+  ngOnInit() {
+    
+  }
 
 }
