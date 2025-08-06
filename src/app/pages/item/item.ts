@@ -1,11 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { ProductosService } from '../../services/productos.service';
+import { ProductoDescripcion } from '../../interface/producto-descripcion.interface';
 
 @Component({
   selector: 'app-item',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './item.html',
   styleUrl: './item.css'
 })
-export class Item {
+export class Item implements OnInit {
+
+  producto: ProductoDescripcion[] = [];
+
+  constructor( private route: ActivatedRoute,
+               public productoService: ProductosService ) {
+    
+  }
+
+  ngOnInit() {
+    this.route.params.subscribe( parametros => 
+      this.productoService.getProducto( parametros['id'] )
+        .subscribe( ( producto: ProductoDescripcion[] ) => {
+          this.producto = producto;
+          console.log(producto);
+        })
+    );
+  }
 
 }
