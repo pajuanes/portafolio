@@ -8,15 +8,15 @@ import { InfoPaginaService } from './services/info-pagina.service';
 import { ProductosService } from './services/productos.service';
 
 //Componentes
-import { Portafolio } from './pages/portafolio/portafolio';
-import { About } from "./pages/about/about";
-import { Item } from './pages/item/item';
+// import { Portafolio } from './pages/portafolio/portafolio';
+// import { About } from "./pages/about/about";
+// import { Item } from './pages/item/item';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Header, Footer, Portafolio, About, Item],
+  imports: [RouterOutlet, Header, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
