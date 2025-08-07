@@ -1,59 +1,119 @@
-# Portafolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.2.
+# 🛠️ Manual Básico para Desarrollos en Angular
 
-## Development server
+## 1. Desarrollo Local
 
-To start a local development server, run:
+> 💻 **Objetivo:** Programar, probar y verificar que la aplicación funciona correctamente en tu equipo local.
 
 ```bash
+# Clonar el repositorio (si ya existe en remoto)
+git clone https://github.com/usuario/mi-proyecto-angular.git
+cd mi-proyecto-angular
+
+# Instalar las dependencias
+npm install
+
+# Iniciar el servidor de desarrollo
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Accede en el navegador:  
+`http://localhost:4200`
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 2. Servidor Local (Preproducción)
 
-```bash
-ng generate component component-name
-```
+> 🌐 **Objetivo:** Simular un entorno productivo sirviendo archivos estáticos generados por `ng build`.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+### 2.1. Instalar http-server
 
 ```bash
-ng build
+npm install -g http-server
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### 2.2. Compilar el proyecto
 
 ```bash
-ng test
+ng build --configuration=production
 ```
 
-## Running end-to-end tests
+Esto genera los archivos estáticos en la carpeta `dist/<nombre-proyecto>`.
 
-For end-to-end (e2e) testing, run:
+### 2.3. Lanzar servidor de preproducción
 
 ```bash
-ng e2e
+cd dist/<nombre-proyecto>
+http-server -o
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Accede en el navegador:  
+`http://localhost:8080`
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 3. Subida al Repositorio (GitHub)
+
+> 🔄 **Objetivo:** Versionar tu código y compartirlo en remoto.
+
+```bash
+# Ver estado
+git status
+
+# Añadir cambios
+git add .
+
+# Commit
+git commit -m "mensaje descriptivo"
+
+# Subir a la rama deseada
+git push origin main
+```
+
+---
+
+## 4. Despliegue Automático (GitHub Actions + Firebase)
+
+> 🚀 **Objetivo:** Que con un simple `git push` se despliegue automáticamente a Firebase Hosting.
+
+### 4.1. Configurar Firebase
+
+```bash
+firebase login
+firebase init
+# Elegir Hosting y GitHub Actions cuando te lo pregunte
+```
+
+### 4.2. Añadir workflow
+
+Confirma que tienes el archivo:
+
+```bash
+.github/workflows/firebase-hosting-merge.yml
+```
+
+Con el contenido generado por Firebase CLI.
+
+### 4.3. Crear script para deploy (opcional)
+
+En tu `package.json`:
+
+```json
+"scripts": {
+  "deploy": "ng build --configuration=production && firebase deploy"
+}
+```
+
+Y ejecutas simplemente:
+
+```bash
+npm run deploy
+```
+
+---
+
+## ✅ Resultado final
+
+- En desarrollo: `http://localhost:4200`
+- En preproducción: `http://localhost:8080`
+- En producción: `https://<tu-proyecto>.web.app`
