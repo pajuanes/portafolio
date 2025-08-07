@@ -19,9 +19,6 @@ export class Header implements OnInit {
   }
 
   buscarProducto( termino: string ) {
-
-    // console.log(termino);
-
     if ( termino.length < 1 ) {
       return;
     }
