@@ -16,5 +16,5 @@ export class Portafolio implements OnInit{
   ngOnInit() {
     
   }
-
+  
 }

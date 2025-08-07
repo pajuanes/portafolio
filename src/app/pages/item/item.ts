@@ -13,6 +13,7 @@ import { ProductoDescripcion } from '../../interface/producto-descripcion.interf
 export class Item implements OnInit {
 
   producto: ProductoDescripcion[] = [];
+  id?: string;
 
   constructor( private route: ActivatedRoute,
                public productoService: ProductosService ) {
@@ -22,8 +23,9 @@ export class Item implements OnInit {
   ngOnInit() {
     this.route.params.subscribe( parametros => 
       this.productoService.getProducto( parametros['id'] )
-        .subscribe( ( producto: ProductoDescripcion[] ) => {
-          this.producto = producto;
+        .subscribe( ( producto: ProductoDescripcion[] | any ) => {
+          this.id = parametros['id'];
+          this.producto = [producto];
           console.log(producto);
         })
     );
