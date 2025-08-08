@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:ghpages": "ng build --configuration=production && cp docs/browser/index.html docs/index.html",
+    "build:ghpages": "ng build --configuration=production --base-href ./",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
