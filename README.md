@@ -115,6 +115,7 @@ npm run deploy
 En tu terminal:
 
 ```bash
+# En src/move-browser.js ejecutará el build directamente en el raíz docs/ para Github Pages
 npm run build:ghpages
 git add docs
 git commit -m "Deploy actualizado en docs/"
