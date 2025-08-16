@@ -110,7 +110,16 @@ Y ejecutas simplemente:
 npm run deploy
 ```
 
----
+### 4.3. Para desplegar manualmente (sin workflow)
+
+En tu terminal:
+
+```bash
+npm run build:ghpages
+git add docs
+git commit -m "Deploy actualizado en docs/"
+git push origin master
+```
 
 ## ✅ Resultado final
 
